@@ -79,6 +79,7 @@ h2 {
 }
 .Vader {
   border: 5.5vh solid rgb(0, 0, 0);
+  /* box-shadow: inset 0 0 5.5vh 7vh black; */
   background-color: white;
   height: 70vh;
   width: 70vh;
