@@ -63,6 +63,7 @@ h2 {
   color: white;
   background-position: center;
   background-size: cover;
+  user-select: none;
 }
 .Emperor, .Luke {
   top: 65%;
