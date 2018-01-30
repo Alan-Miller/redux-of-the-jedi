@@ -4,7 +4,7 @@ function Vader(props) {
 
   return (
     <div className="Vader">
-      <h1>Vader</h1>
+      {/* <h1>Vader</h1> */}
     </div>
   )
 }
