@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Emperor from './components/Emperor';
 import Vader from './components/Vader';
 import Luke from './components/Luke';
+import { connect } from 'react-redux';
 
 class App extends Component {
   render() {
@@ -11,7 +12,7 @@ class App extends Component {
 
         <Header />
 
-        <div className="dark side"><h2></h2></div>
+        <div className="dark side"><h2>{this.props.emperorsMessage} </h2></div>
         <div className="light side"><h2></h2></div>
 
         <Emperor />
@@ -23,4 +24,10 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    emperorsMessage: state.emperorsMessage
+  }
+}
+
+export default connect(mapStateToProps)(App);

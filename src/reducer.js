@@ -8,8 +8,8 @@ const initialState = {
 
 // DEFINE ACTIONS
 const SET_EMP_MSG = 'SET_EMP_MSG';
-// Luke action here
-// Vader action here
+const SET_LUKE_MSG = 'SET_LUKE_MSG';
+const ALTER_VADER_AURA = 'ALTER_VADER_AURA';
 
 // MAKE ACTION CREATORS TO SEND ACTIONS TO REDUCER
 export function setEmpMsg(msg) {
@@ -23,7 +23,14 @@ export function setEmpMsg(msg) {
 // Vader action creator here
 
 // MAKE REDUCER FUNCTION WHICH WILL MAKES CHANGES TO STATE
-
+export default function (state = initialState, action) {
+  switch (action.type) {
+    case SET_EMP_MSG:
+      return Object.assign({}, state, { emperorsMessage: action.payload });
+    default:
+      return state;
+  }
+}
 
 
 
