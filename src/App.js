@@ -25,7 +25,10 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-  return state;
+  return {
+    emperorsMessage: state.emperorsMessage,
+    lukesMessage: state.lukesMessage
+  }
 }
 
 export default connect(mapStateToProps)(App);

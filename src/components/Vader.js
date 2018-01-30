@@ -11,8 +11,8 @@ function Vader(props) {
   )
 }
 
-function mapStateToProps(state) {
-  return state;
+function mapStateToProps({ vadersAura }) {
+  return { vadersAura }
 }
 
 export default connect(mapStateToProps)(Vader);
