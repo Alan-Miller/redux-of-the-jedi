@@ -14,4 +14,21 @@ function Luke(props) {
   )
 }
 
-export default connect(null, { alterVaderAura, setEmpMsg, setLukeMsg })(Luke);
+const mapDispatchToProps = dispatch => {
+  return {
+    alterVaderAura: (influence) => dispatch({
+      type: 'ALTER_VADER_AURA',
+      payload: influence
+    }),
+    setEmpMsg: (msg) => dispatch({
+      type: 'SET_EMP_MSG',
+      payload: msg
+    }),
+    setLukeMsg: (msg) => dispatch({
+      type: 'SET_LUKE_MSG',
+      payload: msg
+    })
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Luke);
