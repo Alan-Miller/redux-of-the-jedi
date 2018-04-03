@@ -1,34 +1,14 @@
 import React, { Component } from 'react';
-import Header from './components/Header';
-import Emperor from './components/Emperor';
-import Vader from './components/Vader';
-import Luke from './components/Luke';
-import { connect } from 'react-redux';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-
-        <Header />
-
-        <div className="dark side"><h2>{this.props.emperorsMessage}</h2></div>
-        <div className="light side"><h2>{this.props.lukesMessage}</h2></div>
-
-        <Emperor />
-        <Vader />
-        <Luke />
-
+        <div className="dark side"><h2></h2></div>
+        <div className="light side"><h2></h2></div>
       </div>
     );
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    emperorsMessage: state.emperorsMessage,
-    lukesMessage: state.lukesMessage
-  }
-}
-
-export default connect(mapStateToProps)(App);
+export default App;
