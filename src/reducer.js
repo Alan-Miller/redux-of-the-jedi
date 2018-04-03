@@ -1,8 +1,6 @@
 // initialState
 const initialState = {
-  lukeMsg: '',
-  emperorMsg: '',
-  vaderAura: ''
+  
 }
 
 // constants
@@ -11,10 +9,12 @@ const SET_EMPEROR_MSG = 'SET_EMPEROR_MSG'
 
 // action creators
 export function setLukeMsg(msg) {
-  return {
+  const lukeAction = {
     type: SET_LUKE_MSG,
     payload: msg
   }
+  console.log('lukeAction', lukeAction)
+  return lukeAction
 }
 
 export function setEmperorMsg(msg) {
@@ -32,9 +32,9 @@ export default function reducer(state = initialState, action) {
   // }
   switch (action.type) {
     case SET_LUKE_MSG:
-      return Object.assign({}, state, { lukeMsg: action.payload })
+      return Object.assign({}, state, { lukeMsg: action.payload, emperorMsg: '' })
     case SET_EMPEROR_MSG:
-      return Object.assign({}, state, { emperorMsg: action.payload })
+      return Object.assign({}, state, { emperorMsg: action.payload, lukeMsg: '' })
     default:
       return state;
   }
