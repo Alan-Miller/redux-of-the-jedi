@@ -1,41 +1,42 @@
-// INITIALIZE STATE
+// initialState
 const initialState = {
-  emperorsMessage: '',
-  lukesMessage: '',
-  vadersAura: '0'
+  
 }
 
+// constants
+const SET_LUKE_MSG = 'SET_LUKE_MSG'
+const SET_EMPEROR_MSG = 'SET_EMPEROR_MSG'
 
-// DEFINE ACTIONS
-const SET_EMP_MSG = 'SET_EMP_MSG';
-const SET_LUKE_MSG = 'SET_LUKE_MSG';
-const ALTER_VADER_AURA = 'ALTER_VADER_AURA';
+// action creators
+export function setLukeMsg(msg) {
+  const lukeAction = {
+    type: SET_LUKE_MSG,
+    payload: msg
+  }
+  console.log('lukeAction', lukeAction)
+  return lukeAction
+}
 
-// MAKE ACTION CREATORS TO SEND ACTIONS TO REDUCER
-export function setEmpMsg(msg) {
+export function setEmperorMsg(msg) {
   return {
-    type: SET_EMP_MSG,
+    type: SET_EMPEROR_MSG,
     payload: msg
   }
 }
 
-// Luke action creator here 
-// Vader action creator here
+// reducer function
 
-// MAKE REDUCER FUNCTION WHICH WILL MAKES CHANGES TO STATE
-export default function (state = initialState, action) {
+export default function reducer(state = initialState, action) {
+  // if (action.type === SET_LUKE_MSG) {
+  //   return Object.assign({}, state, { lukeMsg: action.payload })
+  // }
   switch (action.type) {
-    case SET_EMP_MSG:
-      return Object.assign({}, state, { emperorsMessage: action.payload });
+    case SET_LUKE_MSG:
+      return Object.assign({}, state, { lukeMsg: action.payload, emperorMsg: '' })
+    case SET_EMPEROR_MSG:
+      return Object.assign({}, state, { emperorMsg: action.payload, lukeMsg: '' })
     default:
       return state;
   }
+
 }
-
-
-
-
-// NOTES FOR AURA CASE
-// let aura = +state.vadersAura + +action.payload;
-// aura = aura > 255 ? 255 : aura < 0 ? 0 : aura;
-// return Object.assign({}, state, { vadersAura: aura.toString() });
