@@ -1,8 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 function Vader(props) {
-  const aura = props.vadersAura;
 
   return (
     <div className="Vader" style={{ borderColor: `rgb(${aura}, ${aura}, ${aura})` }}>
@@ -11,8 +9,4 @@ function Vader(props) {
   )
 }
 
-function mapStateToProps({ vadersAura }) {
-  return { vadersAura }
-}
-
-export default connect(mapStateToProps)(Vader);
+export default Vader;
